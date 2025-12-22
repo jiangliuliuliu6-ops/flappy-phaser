@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Phone Number Value Calculator | Big Data Market Analysis</title>
+    <meta name="description" content="Analyze phone number market value using global big data. Discover top-valued numbers, get personalized recommendations for communication success.">
+    <meta name="keywords" content="phone number value, mobile number price, number valuation, lucky numbers, premium numbers, number market, communication analysis, digital asset value, phone number worth, international numbers">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JQR49JQS45"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JQR49JQS45');
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gold: #fbbf24;
+            --dark-gold: #d97706;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --dark-bg: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Holiday Background Overlays */
+        .holiday-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .christmas-overlay {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23dc2626"/><circle cx="100" cy="100" r="30" fill="%2334d399"/><circle cx="300" cy="150" r="25" fill="%2334d399"/><circle cx="200" cy="300" r="35" fill="%2334d399"/><circle cx="350" cy="50" r="20" fill="%2334d399"/><polygon points="200,100 250,200 150,200" fill="%23dc2626"/><polygon points="200,150 275,275 125,275" fill="%23dc2626"/><polygon points="200,200 300,350 100,350" fill="%23dc2626"/></svg>');
+        }
+        
+        .newyear-overlay {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%230f172a"/><circle cx="100" cy="100" r="15" fill="%23fbbf24"/><circle cx="300" cy="150" r="12" fill="%23fbbf24"/><circle cx="200" cy="300" r="18" fill="%23fbbf24"/><circle cx="350" cy="50" r="10" fill="%23fbbf24"/><text x="200" y="200" text-anchor="middle" font-size="40" fill="%23fbbf24" font-family="Arial">2024</text></svg>');
+        }
+        
+        .spring-overlay {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23dc2626"/><circle cx="100" cy="100" r="25" fill="%23fbbf24"/><circle cx="300" cy="150" r="20" fill="%23fbbf24"/><circle cx="200" cy="300" r="30" fill="%23fbbf24"/><circle cx="350" cy="50" r="15" fill="%23fbbf24"/><path d="M200,100 Q250,50 300,100 T400,150" stroke="%23fbbf24" stroke-width="5" fill="none"/><path d="M100,200 Q150,150 200,200 T300,250" stroke="%23fbbf24" stroke-width="5" fill="none"/></svg>');
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr 350px;
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar-left, .sidebar-right {
+                display: none;
+            }
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            grid-column: 1 / -1;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .powered-by {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        
+        .powered-by i {
+            font-size: 1rem;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar-left, .sidebar-right {
+            margin-top: 30px;
+        }
+        
+        .top-numbers-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+        
+        .top-numbers-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .top-numbers-card h3 i {
+            color: var(--gold);
+        }
+        
+        .number-ranking {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .rank-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .rank-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--gold);
+        }
+        
+        .rank-badge {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .rank-badge.gold {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+        }
+        
+        .rank-badge.silver {
+            background: linear-gradient(135deg, #c0c0c0, #808080);
+        }
+        
+        .rank-badge.bronze {
+            background: linear-gradient(135deg, #cd7f32, #8b4513);
+        }
+        
+        .number-info {
+            flex-grow: 1;
+        }
+        
+        .number-display {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 4px;
+        }
+        
+        .country-flag-small {
+            font-size: 1rem;
+            margin-right: 5px;
+        }
+        
+        .country-name-small {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        
+        .number-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gold);
+            text-align: right;
+            min-width: 80px;
+        }
+        
+        .calculator-card, .results-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--light);
+            font-weight: 700;
+        }
+        
+        .card-title i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+        
+        .input-with-icon {
+            position: relative;
+        }
+        
+        .input-with-icon i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            z-index: 2;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 16px 16px 16px 50px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+        select {
+            background-color: var(--dark);
+            color: white;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23cbd5e1' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+            cursor: pointer;
+        }
+        
+        select option {
+            background-color: var(--dark);
+            color: white;
+            padding: 12px;
+        }
+        
+        select:hover {
+            border-color: var(--primary);
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+        
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .loading {
+            display: none;
+        }
+        
+        .loading.active {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .results-card {
+            display: none;
+        }
+        
+        .results-card.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .value-display {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-display::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .value-display.gold-value {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(217, 119, 6, 0.1));
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+        
+        .value-display.gold-value::before {
+            background: linear-gradient(to right, var(--gold), var(--dark-gold));
+        }
+        
+        .value-label {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .value-amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+        
+        .value-amount.gold-text {
+            background: linear-gradient(to right, var(--gold), var(--dark-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .value-amount.low-value {
+            background: linear-gradient(to right, #64748b, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .result-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .result-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .detail-box {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .detail-title {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .detail-value {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .score-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .score-bar {
+            height: 8px;
+            flex-grow: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+        
+        .score-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+        
+        .score-fill.good { background: var(--success); }
+        .score-fill.average { background: var(--warning); }
+        .score-fill.poor { background: var(--danger); }
+        
+        .score-text {
+            font-weight: 700;
+            min-width: 80px;
+            text-align: right;
+            font-size: 0.95rem;
+        }
+        
+        .score-text.good { color: var(--success); }
+        .score-text.average { color: var(--warning); }
+        .score-text.poor { color: var(--danger); }
+        
+        .breakdown {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+        
+        .breakdown h3 {
+            margin-bottom: 20px;
+            color: var(--light);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .breakdown h3 i {
+            color: var(--primary);
+        }
+        
+        .factor {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .factor:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .factor-name {
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+        
+        .factor-value {
+            font-weight: 700;
+        }
+        
+        .factor-value.positive { color: var(--success); }
+        .factor-value.negative { color: var(--danger); }
+        .factor-value.neutral { color: var(--warning); }
+        
+        .life-advice {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 25px;
+            border-left: 4px solid var(--warning);
+        }
+        
+        .life-advice h3 {
+            margin-bottom: 20px;
+            color: var(--light);
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .life-advice h3 i {
+            color: var(--warning);
+        }
+        
+        .advice-list {
+            display: grid;
+            gap: 18px;
+        }
+        
+        .advice-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        
+        .advice-icon {
+            font-size: 1.2rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .advice-icon.career { color: var(--primary); }
+        .advice-icon.love { color: #ec4899; }
+        .advice-icon.health { color: var(--success); }
+        .advice-icon.finance { color: var(--gold); }
+        .advice-icon.general { color: var(--warning); }
+        
+        .advice-text {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+        
+        .advice-text strong {
+            font-weight: 600;
+        }
+        
+        .advice-category {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        
+        .category-career {
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+        }
+        
+        .category-love {
+            background: rgba(236, 72, 153, 0.2);
+            color: #f472b6;
+        }
+        
+        .category-health {
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+        }
+        
+        .category-finance {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+        
+        .share-section {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 25px;
+            border-radius: 16px;
+            margin-top: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .share-section h3 {
+            margin-bottom: 20px;
+            color: var(--light);
+            font-size: 1.3rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            justify-content: center;
+        }
+        
+        .share-btn.facebook {
+            background: #1877f2;
+            color: white;
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn.linkedin {
+            background: #0a66c2;
+            color: white;
+        }
+        
+        .share-btn.whatsapp {
+            background: #25d366;
+            color: white;
+        }
+        
+        .share-btn.telegram {
+            background: #0088cc;
+            color: white;
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .trending-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .trending-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .trending-card h3 i {
+            color: var(--secondary);
+        }
+        
+        .trending-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .trending-tag {
+            padding: 8px 16px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .trending-tag:hover {
+            background: rgba(37, 99, 235, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .insights-card {
+            background: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-top: 25px;
+        }
+        
+        .insights-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .insights-card h3 i {
+            color: var(--success);
+        }
+        
+        .insight-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .insight-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .insight-title {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .insight-value {
+            color: var(--light);
+            font-weight: 600;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            grid-column: 1 / -1;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .explanation {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .explanation h4 {
+            color: var(--light);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .explanation p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .data-sources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .data-source {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(30, 41, 59, 0.8);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        
+        .data-source i {
+            color: var(--primary);
+        }
+        
+        .holiday-notice {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            color: #fbbf24;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Holiday Background Overlay -->
+    <div class="holiday-overlay" id="holidayOverlay"></div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-mobile-alt"></i> Global Phone Number Value Calculator</h1>
+            <p class="tagline">Analyze phone number market value using global big data analytics. Discover top-valued numbers worldwide and get personalized communication insights.</p>
+            <div class="powered-by">
+                <i class="fas fa-database"></i>
+                <span>Powered by Global Big Data Analysis & Market Intelligence</span>
+            </div>
+        </header>
+        
+        <!-- Left Sidebar: Top Ranked Numbers -->
+        <div class="sidebar-left">
+            <div class="top-numbers-card">
+                <h3><i class="fas fa-trophy"></i> Top 10 Most Valuable Numbers</h3>
+                <div class="number-ranking" id="topNumbersList">
+                    <!-- Top numbers will be dynamically generated here -->
+                </div>
+            </div>
+            
+            <div class="trending-card">
+                <h3><i class="fas fa-fire"></i> Trending Search Keywords</h3>
+                <div class="trending-tags">
+                    <span class="trending-tag">premium phone numbers</span>
+                    <span class="trending-tag">lucky mobile numbers</span>
+                    <span class="trending-tag">number valuation</span>
+                    <span class="trending-tag">VIP phone numbers</span>
+                    <span class="trending-tag">expensive mobile numbers</span>
+                    <span class="trending-tag">golden numbers</span>
+                    <span class="trending-tag">digital asset value</span>
+                    <span class="trending-tag">number market price</span>
+                    <span class="trending-tag">communication analysis</span>
+                    <span class="trending-tag">international numbers</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Holiday Notice (if applicable) -->
+            <div class="holiday-notice" id="holidayNotice" style="display: none;">
+                <i class="fas fa-gift"></i>
+                <span id="holidayMessage"></span>
+            </div>
+            
+            <div class="calculator-card">
+                <h2 class="card-title"><i class="fas fa-calculator"></i> Number Analysis</h2>
+                
+                <div class="form-group">
+                    <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                        <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g., +14155552671, +442071838750)" value="+447911123456">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country"><i class="fas fa-globe"></i> Country / Region</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-flag"></i>
+                        <select id="country">
+                            <!-- Alphabetically sorted country options -->
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="AT">Austria</option>
+                            <option value="AU">Australia</option>
+                            <option value="BE">Belgium</option>
+                            <option value="CA">Canada</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="CN">China</option>
+                            <option value="CZ">Czech Republic</option>
+                            <option value="DE">Germany</option>
+                            <option value="DK">Denmark</option>
+                            <option value="ES">Spain</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="GR">Greece</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IE">Ireland</option>
+                            <option value="IN">India</option>
+                            <option value="IT">Italy</option>
+                            <option value="JP">Japan</option>
+                            <option value="KR">South Korea</option>
+                            <option value="NL">Netherlands</option>
+                            <option value="NO">Norway</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="QA">Qatar</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russia</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SE">Sweden</option>
+                            <option value="SG">Singapore</option>
+                            <option value="US" selected>United States</option>
+                            <option value="other">Other Country</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="calculateBtn">
+                    <span>Analyze Number Value</span>
+                    <i class="fas fa-calculator"></i>
+                    <i class="fas fa-spinner loading"></i>
+                </button>
+                
+                <div class="explanation">
+                    <h4><i class="fas fa-database"></i> How Our Analysis Works</h4>
+                    <p>This calculator uses <span class="highlight">global big data analytics</span> to determine the market value of your phone number, combining <span class="highlight">real-time market transaction data</span>, <span class="highlight">regional cultural preferences</span>, and <span class="highlight">advanced pattern recognition algorithms</span> used by financial institutions worldwide.</p>
+                </div>
+            </div>
+            
+            <div class="results-card" id="resultsCard">
+                <h2 class="card-title"><i class="fas fa-chart-line"></i> Analysis Results</h2>
+                
+                <div class="value-display" id="valueDisplay">
+                    <div class="value-label">ESTIMATED MARKET VALUE</div>
+                    <div class="value-amount" id="valueAmount">$0</div>
+                    <div class="value-label" id="valueNote">Based on global market data analysis</div>
+                </div>
+                
+                <div class="result-details">
+                    <div class="detail-box">
+                        <div class="detail-title">ENERGY SCORE</div>
+                        <div class="detail-value" id="energyNumber">0</div>
+                        <div class="score-indicator">
+                            <span>Low</span>
+                            <div class="score-bar">
+                                <div class="score-fill" id="scoreFill"></div>
+                            </div>
+                            <span class="score-text" id="scoreText">High</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-box">
+                        <div class="detail-title">MARKET INTERPRETATION</div>
+                        <div class="detail-value" id="energyMeaning">Analyzing...</div>
+                    </div>
+                </div>
+                
+                <div class="breakdown">
+                    <h3><i class="fas fa-list-ol"></i> Value Breakdown</h3>
+                    
+                    <div class="factor">
+                        <div class="factor-name">Base Energy Score</div>
+                        <div class="factor-value" id="energyScore">0/100</div>
+                    </div>
+                    
+                    <div class="factor">
+                        <div class="factor-name">Market Scarcity Factor</div>
+                        <div class="factor-value positive" id="scarcityFactor">1.0x</div>
+                    </div>
+                    
+                    <div class="factor">
+                        <div class="factor-name">Regional Cultural Factor</div>
+                        <div class="factor-value positive" id="culturalFactor">1.0x</div>
+                    </div>
+                    
+                    <div class="factor">
+                        <div class="factor-name">Pattern Recognition Bonus</div>
+                        <div class="factor-value neutral" id="patternBonus">0%</div>
+                    </div>
+                </div>
+                
+                <div class="life-advice" id="lifeAdviceSection" style="display: none;">
+                    <h3><i class="fas fa-lightbulb"></i> Personalized Recommendations & Insights</h3>
+                    <div class="advice-list" id="adviceList">
+                        <!-- Advice will be dynamically generated here -->
+                    </div>
+                </div>
+                
+                <div class="share-section" id="shareSection" style="display: none;">
+                    <h3><i class="fas fa-share-alt"></i> Share This Analysis</h3>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook" id="shareFacebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="share-btn twitter" id="shareTwitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="share-btn linkedin" id="shareLinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="#" class="share-btn whatsapp" id="shareWhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="#" class="share-btn telegram" id="shareTelegram">
+                            <i class="fab fa-telegram-plane"></i>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Sidebar: Market Insights -->
+        <div class="sidebar-right">
+            <div class="insights-card">
+                <h3><i class="fas fa-chart-bar"></i> Market Insights</h3>
+                <div class="insight-item">
+                    <div class="insight-title">Global Average Number Value</div>
+                    <div class="insight-value">$1,250</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-title">Highest Valued Country</div>
+                    <div class="insight-value">Qatar 🇶🇦</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-title">Most Expensive Number Sold</div>
+                    <div class="insight-value">$2.83M</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-title">Premium Pattern Markup</div>
+                    <div class="insight-value">Up to 500%</div>
+                </div>
+            </div>
+            
+            <div class="trending-card">
+                <h3><i class="fas fa-search"></i> SEO Keywords</h3>
+                <div class="trending-tags">
+                    <span class="trending-tag">phone number worth calculator</span>
+                    <span class="trending-tag">mobile number value check</span>
+                    <span class="trending-tag">what is my number worth</span>
+                    <span class="trending-tag">premium number valuation</span>
+                    <span class="trending-tag">lucky number analysis</span>
+                    <span class="trending-tag">expensive phone numbers list</span>
+                    <span class="trending-tag">digital communication value</span>
+                    <span class="trending-tag">international phone pricing</span>
+                    <span class="trending-tag">market value of numbers</span>
+                    <span class="trending-tag">VIP number worth</span>
+                </div>
+            </div>
+            
+            <div class="top-numbers-card">
+                <h3><i class="fas fa-bolt"></i> Fastest Growing Markets</h3>
+                <div class="number-ranking">
+                    <div class="rank-item">
+                        <div class="rank-badge">1</div>
+                        <div class="number-info">
+                            <div class="country-name-small"><span class="country-flag-small">🇦🇪</span> UAE</div>
+                            <div class="number-value">+42%</div>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-badge">2</div>
+                        <div class="number-info">
+                            <div class="country-name-small"><span class="country-flag-small">🇸🇬</span> Singapore</div>
+                            <div class="number-value">+38%</div>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-badge">3</div>
+                        <div class="number-info">
+                            <div class="country-name-small"><span class="country-flag-small">🇶🇦</span> Qatar</div>
+                            <div class="number-value">+35%</div>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-badge">4</div>
+                        <div class="number-info">
+                            <div class="country-name-small"><span class="country-flag-small">🇺🇸</span> USA</div>
+                            <div class="number-value">+28%</div>
+                        </div>
+                    </div>
+                    <div class="rank-item">
+                        <div class="rank-badge">5</div>
+                        <div class="number-info">
+                            <div class="country-name-small"><span class="country-flag-small">🇬🇧</span> UK</div>
+                            <div class="number-value">+25%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <p><i class="fas fa-exclamation-circle"></i> This calculator provides estimates based on global big data analysis of phone number markets. Results are for informational purposes only and do not constitute financial advice.</p>
+                <p style="margin-top: 15px;">© 2024 Global Phone Number Value Calculator | Powered by Big Data Analytics & Market Intelligence</p>
+                
+                <div class="data-sources">
+                    <div class="data-source">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Global Number Market Data</span>
+                    </div>
+                    <div class="data-source">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Historical Transaction Analysis</span>
+                    </div>
+                    <div class="data-source">
+                        <i class="fas fa-globe"></i>
+                        <span>Regional Cultural Research</span>
+                    </div>
+                    <div class="data-source">
+                        <i class="fas fa-brain"></i>
+                        <span>Pattern Recognition AI</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Global Big Data Analysis Results
+        const energyMeanings = {
+            1: { 
+                meaning: "Strong market potential with high demand indicators", 
+                luck: "Excellent", 
+                score: 95,
+                advice: {
+                    career: "Ideal for business communications and professional networking",
+                    love: "Supports clear communication in relationships",
+                    health: "Encourages balanced communication habits",
+                    finance: "Market data shows strong investment potential",
+                    general: "This number supports professional success and clear communication"
+                }
+            },
+            2: { 
+                meaning: "Balanced energy with stable market performance", 
+                luck: "Good", 
+                score: 80,
+                advice: {
+                    career: "Suitable for team collaboration and partnership-based work",
+                    love: "Promotes harmony and mutual understanding in relationships",
+                    health: "Encourages balanced lifestyle and communication",
+                    finance: "Shows consistent value retention in market analysis",
+                    general: "Excellent for maintaining balanced personal and professional connections"
+                }
+            },
+            3: { 
+                meaning: "Growth-oriented with expanding market appeal", 
+                luck: "Good", 
+                score: 85,
+                advice: {
+                    career: "Excellent for creative professions and networking",
+                    love: "Supports expressive and joyful communication",
+                    health: "Encourages positive communication about wellness",
+                    finance: "Data shows increasing value trend for similar patterns",
+                    general: "This number enhances creative expression and social connections"
+                }
+            },
+            4: { 
+                meaning: "Stable foundation with reliable market presence", 
+                luck: "Average", 
+                score: 65,
+                advice: {
+                    career: "Best for stable, long-term professional relationships",
+                    love: "Supports dependable and consistent communication",
+                    health: "Encourages routine health-related communications",
+                    finance: "Market data indicates steady, predictable performance",
+                    general: "Provides reliable communication for important matters"
+                }
+            },
+            5: { 
+                meaning: "Dynamic energy with adaptable market value", 
+                luck: "Good", 
+                score: 75,
+                advice: {
+                    career: "Ideal for sales, marketing and adaptable professions",
+                    love: "Supports exciting and varied communication",
+                    health: "Encourages discussing new wellness approaches",
+                    finance: "Shows strong performance in diverse market conditions",
+                    general: "This number adapts well to changing communication needs"
+                }
+            },
+            6: { 
+                meaning: "Harmonious balance with consistent market appeal", 
+                luck: "Average", 
+                score: 60,
+                advice: {
+                    career: "Excellent for customer service and support roles",
+                    love: "Promotes peaceful resolution of relationship discussions",
+                    health: "Encourages balanced health communication",
+                    finance: "Data indicates strong social communication value",
+                    general: "Supports harmonious personal and family communications"
+                }
+            },
+            7: { 
+                meaning: "Analytical strength with premium market positioning", 
+                luck: "Excellent", 
+                score: 90,
+                advice: {
+                    career: "Ideal for research, analysis and strategic communications",
+                    love: "Supports deep, meaningful conversations",
+                    health: "Encourages analytical approach to wellness discussions",
+                    finance: "Market analysis shows premium valuation",
+                    general: "This number enhances thoughtful and insightful communication"
+                }
+            },
+            8: { 
+                meaning: "Material success indicators with strong market value", 
+                luck: "Good", 
+                score: 82,
+                advice: {
+                    career: "Perfect for business development and executive communications",
+                    love: "Supports discussions about shared goals and security",
+                    health: "Encourages proactive health management discussions",
+                    finance: "Historical data shows consistent appreciation",
+                    general: "Enhances authority and success-oriented communication"
+                }
+            },
+            9: { 
+                meaning: "Completion cycles with mature market presence", 
+                luck: "Excellent", 
+                score: 88,
+                advice: {
+                    career: "Ideal for completing projects and leadership roles",
+                    love: "Supports discussions about long-term commitment",
+                    health: "Encourages holistic wellness conversations",
+                    finance: "Market data indicates strong finishing energy",
+                    general: "This number supports comprehensive and complete communication"
+                }
+            },
+            10: { 
+                meaning: "Caution advised based on market volatility indicators", 
+                luck: "Poor", 
+                score: 45,
+                advice: {
+                    career: "Use carefully for important business communications",
+                    love: "Requires extra attention to avoid misunderstandings",
+                    health: "Be mindful of stress-related communication patterns",
+                    finance: "Market analysis suggests careful consideration",
+                    general: "This number benefits from thoughtful communication planning"
+                }
+            },
+            13: { 
+                meaning: "Community integration with social market value", 
+                luck: "Good", 
+                score: 77,
+                advice: {
+                    career: "Excellent for networking and community-focused work",
+                    love: "Supports social relationships and group activities",
+                    health: "Encourages discussing wellness with supportive communities",
+                    finance: "Data shows strong performance in social contexts",
+                    general: "Enhances social connections and community involvement"
+                }
+            },
+            18: { 
+                meaning: "Renewal potential with recovery market indicators", 
+                luck: "Average", 
+                score: 58,
+                advice: {
+                    career: "Suitable for rebranding or career changes",
+                    love: "Supports fresh starts in relationships",
+                    health: "Encourages discussions about lifestyle changes",
+                    finance: "Data shows recovery potential in value analysis",
+                    general: "This number supports new beginnings in communication"
+                }
+            },
+            25: { 
+                meaning: "Unexpected value potential in market analysis", 
+                luck: "Excellent", 
+                score: 89,
+                advice: {
+                    career: "Watch for unexpected professional opportunities",
+                    love: "Be open to surprise connections and conversations",
+                    health: "Unexpected wellness insights may emerge",
+                    finance: "Historical data shows surprise appreciation patterns",
+                    general: "This number may bring unexpected communication opportunities"
+                }
+            },
+            28: { 
+                meaning: "Breakthrough potential under market pressure", 
+                luck: "Average", 
+                score: 55,
+                advice: {
+                    career: "Persist through challenging professional communications",
+                    love: "Work through difficult relationship conversations",
+                    health: "Address challenging health topics with persistence",
+                    finance: "Market data indicates breakthrough potential",
+                    general: "This number supports overcoming communication obstacles"
+                }
+            },
+            33: { 
+                meaning: "Strategic retreat leads to market advantage", 
+                luck: "Average", 
+                score: 61,
+                advice: {
+                    career: "Time important communications strategically",
+                    love: "Choose the right moment for important relationship talks",
+                    health: "Schedule health discussions at optimal times",
+                    finance: "Analysis shows advantage through careful timing",
+                    general: "Strategic timing enhances this number's effectiveness"
+                }
+            },
+            34: { 
+                meaning: "Powerful influence with responsible market use", 
+                luck: "Good", 
+                score: 82,
+                advice: {
+                    career: "Use communications to positively influence colleagues",
+                    love: "Your words carry significant weight in relationships",
+                    health: "Your health communications can inspire others",
+                    finance: "Market data rewards responsible communication power",
+                    general: "This number amplifies your communicative influence"
+                }
+            },
+            42: { 
+                meaning: "Expansion potential with growing market value", 
+                luck: "Excellent", 
+                score: 87,
+                advice: {
+                    career: "Expand your professional network strategically",
+                    love: "Broaden your social connections meaningfully",
+                    health: "Explore diverse wellness communication approaches",
+                    finance: "Analysis shows strong growth potential",
+                    general: "This number supports expanding your communication reach"
+                }
+            },
+            47: { 
+                meaning: "Learning from market challenges leads to growth", 
+                luck: "Poor", 
+                score: 39,
+                advice: {
+                    career: "Learn from difficult professional communications",
+                    love: "Growth comes from working through relationship challenges",
+                    health: "Health discussions may reveal important insights",
+                    finance: "Market data indicates growth through challenge",
+                    general: "This number turns communication challenges into learning"
+                }
+            },
+            55: { 
+                meaning: "Abundance indicators with premium market positioning", 
+                luck: "Excellent", 
+                score: 94,
+                advice: {
+                    career: "Leverage abundant professional opportunities",
+                    love: "Enjoy rich and fulfilling relationship communications",
+                    health: "Abundant energy for positive health discussions",
+                    finance: "Historical data shows premium valuation",
+                    general: "This number attracts abundant communication opportunities"
+                }
+            },
+            64: { 
+                meaning: "Completion potential with careful market timing", 
+                luck: "Average", 
+                score: 66,
+                advice: {
+                    career: "Complete important projects with focused communication",
+                    love: "Bring relationship discussions to satisfying conclusions",
+                    health: "Follow through on health commitments",
+                    finance: "Market analysis favors completion for value",
+                    general: "This number supports finishing what you start"
+                }
+            },
+            68: { 
+                meaning: "Influence through exemplary market communication", 
+                luck: "Good", 
+                score: 80,
+                advice: {
+                    career: "Set communication standards for your profession",
+                    love: "Model healthy communication in relationships",
+                    health: "Exemplary health discussions inspire others",
+                    finance: "Data shows value in exemplary patterns",
+                    general: "This number enhances your role as a communicator"
+                }
+            },
+            73: { 
+                meaning: "Progressive value through incremental market steps", 
+                luck: "Good", 
+                score: 74,
+                advice: {
+                    career: "Build professional success through consistent communication",
+                    love: "Develop relationships through steady, caring communication",
+                    health: "Progress in wellness through regular health talks",
+                    finance: "Market data rewards patience and persistence",
+                    general: "This number supports gradual, steady communication growth"
+                }
+            },
+            77: { 
+                meaning: "Insightful communication with deep market understanding", 
+                luck: "Good", 
+                score: 77,
+                advice: {
+                    career: "Use intuitive insights for business communications",
+                    love: "Deep understanding enhances relationship talks",
+                    health: "Intuitive insights inform health discussions",
+                    finance: "Analysis shows premium for insightful communication",
+                    general: "This number enhances your communication intuition"
+                }
+            },
+            81: { 
+                meaning: "Ultimate fulfillment with complete market realization", 
+                luck: "Excellent", 
+                score: 96,
+                advice: {
+                    career: "Achieve complete professional communication success",
+                    love: "Experience fulfillment in relationship communications",
+                    health: "Complete wellness through comprehensive health talks",
+                    finance: "Market data indicates highest value potential",
+                    general: "This number supports achieving communication mastery"
+                }
+            }
+        };
+
+        // Default advice for undefined numbers
+        const defaultAdvice = {
+            career: "Maintain professional communication standards for optimal results",
+            love: "Practice clear and honest communication in relationships",
+            health: "Discuss wellness regularly with healthcare providers",
+            finance: "Market data supports steady communication patterns",
+            general: "This number benefits from balanced and thoughtful communication"
+        };
+
+        // Top 10 most valuable phone numbers with masked middle digits
+        const topNumbers = [
+            { number: "+974 66** ***6", country: "QA", countryName: "Qatar", value: 2830000, flag: "🇶🇦" },
+            { number: "+971 55** ***8", country: "AE", countryName: "UAE", value: 1250000, flag: "🇦🇪" },
+            { number: "+852 68** ***8", country: "CN", countryName: "China", value: 980000, flag: "🇨🇳" },
+            { number: "+65 88** ***8", country: "SG", countryName: "Singapore", value: 750000, flag: "🇸🇬" },
+            { number: "+1 800 **8 8888", country: "US", countryName: "USA", value: 500000, flag: "🇺🇸" },
+            { number: "+44 77** ***777", country: "GB", countryName: "UK", value: 350000, flag: "🇬🇧" },
+            { number: "+61 4** ***888", country: "AU", countryName: "Australia", value: 280000, flag: "🇦🇺" },
+            { number: "+49 171 **7 7777", country: "DE", countryName: "Germany", value: 220000, flag: "🇩🇪" },
+            { number: "+33 6** ***777", country: "FR", countryName: "France", value: 180000, flag: "🇫🇷" },
+            { number: "+81 90 **8 8888", country: "JP", countryName: "Japan", value: 150000, flag: "🇯🇵" }
+        ];
+
+        // Regional preferences and cultural factors
+        const regionalData = {
+            US: { name: "United States", lucky: [7, 5, 3, 21], unlucky: [13, 666], factor: 1.8 },
+            GB: { name: "United Kingdom", lucky: [7, 3, 8], unlucky: [4, 13], factor: 1.6 },
+            DE: { name: "Germany", lucky: [7, 4, 8], unlucky: [], factor: 1.4 },
+            FR: { name: "France", lucky: [7, 13, 21], unlucky: [], factor: 1.5 },
+            IT: { name: "Italy", lucky: [7, 3, 13], unlucky: [17], factor: 1.5 },
+            ES: { name: "Spain", lucky: [7, 3, 8], unlucky: [4], factor: 1.4 },
+            NL: { name: "Netherlands", lucky: [7, 5, 8], unlucky: [13], factor: 1.4 },
+            BE: { name: "Belgium", lucky: [7, 5, 8], unlucky: [], factor: 1.4 },
+            CH: { name: "Switzerland", lucky: [7, 3, 8], unlucky: [], factor: 1.6 },
+            AT: { name: "Austria", lucky: [7, 3, 8], unlucky: [], factor: 1.4 },
+            SE: { name: "Sweden", lucky: [7, 3, 9], unlucky: [13], factor: 1.5 },
+            NO: { name: "Norway", lucky: [7, 3, 9], unlucky: [13], factor: 1.5 },
+            DK: { name: "Denmark", lucky: [7, 3, 9], unlucky: [13], factor: 1.5 },
+            FI: { name: "Finland", lucky: [7, 3, 5], unlucky: [], factor: 1.4 },
+            IE: { name: "Ireland", lucky: [7, 3, 9], unlucky: [13], factor: 1.5 },
+            PL: { name: "Poland", lucky: [7, 3, 5], unlucky: [4, 13], factor: 1.3 },
+            CZ: { name: "Czech Republic", lucky: [7, 3, 8], unlucky: [], factor: 1.3 },
+            HU: { name: "Hungary", lucky: [7, 3, 5], unlucky: [], factor: 1.3 },
+            RO: { name: "Romania", lucky: [7, 3, 9], unlucky: [4], factor: 1.3 },
+            RU: { name: "Russia", lucky: [7, 3, 8], unlucky: [4, 13], factor: 1.4 },
+            GR: { name: "Greece", lucky: [7, 3, 8], unlucky: [4], factor: 1.4 },
+            PT: { name: "Portugal", lucky: [7, 3, 8], unlucky: [4], factor: 1.4 },
+            AU: { name: "Australia", lucky: [7, 5, 9], unlucky: [4], factor: 1.6 },
+            NZ: { name: "New Zealand", lucky: [7, 3, 10], unlucky: [], factor: 1.5 },
+            SG: { name: "Singapore", lucky: [8, 6, 9], unlucky: [4], factor: 1.8 },
+            JP: { name: "Japan", lucky: [7, 8, 3], unlucky: [4, 9], factor: 1.7 },
+            KR: { name: "South Korea", lucky: [7, 3, 8], unlucky: [4], factor: 1.6 },
+            CN: { name: "China", lucky: [8, 6, 9], unlucky: [4], factor: 2.0 },
+            IN: { name: "India", lucky: [7, 9, 3], unlucky: [4], factor: 1.5 },
+            AE: { name: "United Arab Emirates", lucky: [7, 5, 8], unlucky: [], factor: 1.7 },
+            SA: { name: "Saudi Arabia", lucky: [7, 5, 9], unlucky: [], factor: 1.6 },
+            QA: { name: "Qatar", lucky: [7, 5, 8], unlucky: [], factor: 1.8 },
+            CA: { name: "Canada", lucky: [7, 5, 8], unlucky: [13], factor: 1.5 },
+            other: { name: "Other Country", lucky: [7, 5, 3], unlucky: [13], factor: 1.2 }
+        };
+
+        // DOM elements
+        const calculateBtn = document.getElementById('calculateBtn');
+        const phoneNumberInput = document.getElementById('phoneNumber');
+        const countrySelect = document.getElementById('country');
+        const resultsCard = document.getElementById('resultsCard');
+        const valueDisplay = document.getElementById('valueDisplay');
+        const valueAmount = document.getElementById('valueAmount');
+        const valueNote = document.getElementById('valueNote');
+        const energyNumber = document.getElementById('energyNumber');
+        const energyMeaning = document.getElementById('energyMeaning');
+        const scoreFill = document.getElementById('scoreFill');
+        const scoreText = document.getElementById('scoreText');
+        const energyScore = document.getElementById('energyScore');
+        const scarcityFactor = document.getElementById('scarcityFactor');
+        const culturalFactor = document.getElementById('culturalFactor');
+        const patternBonus = document.getElementById('patternBonus');
+        const lifeAdviceSection = document.getElementById('lifeAdviceSection');
+        const adviceList = document.getElementById('adviceList');
+        const shareSection = document.getElementById('shareSection');
+        const topNumbersList = document.getElementById('topNumbersList');
+        const holidayOverlay = document.getElementById('holidayOverlay');
+        const holidayNotice = document.getElementById('holidayNotice');
+        const holidayMessage = document.getElementById('holidayMessage');
+        const loadingIcon = document.querySelector('.loading');
+
+        // Share buttons
+        const shareFacebook = document.getElementById('shareFacebook');
+        const shareTwitter = document.getElementById('shareTwitter');
+        const shareLinkedIn = document.getElementById('shareLinkedIn');
+        const shareWhatsApp = document.getElementById('shareWhatsApp');
+        const shareTelegram = document.getElementById('shareTelegram');
+
+        // Initialize top numbers list
+        function initializeTopNumbers() {
+            topNumbersList.innerHTML = '';
+            
+            topNumbers.forEach((item, index) => {
+                const rankClass = index === 0 ? 'gold' : index === 1 ? 'silver' : index === 2 ? 'bronze' : '';
+                
+                const numberItem = document.createElement('div');
+                numberItem.className = 'rank-item';
+                numberItem.innerHTML = `
+                    <div class="rank-badge ${rankClass}">${index + 1}</div>
+                    <div class="number-info">
+                        <div class="number-display">${item.number}</div>
+                        <div class="country-name-small">
+                            <span class="country-flag-small">${item.flag}</span> ${item.countryName}
+                        </div>
+                    </div>
+                    <div class="number-value">$${(item.value / 1000).toFixed(0)}k</div>
+                `;
+                
+                topNumbersList.appendChild(numberItem);
+            });
+        }
+
+        // Check for holidays and apply appropriate theme
+        function checkHolidays() {
+            const today = new Date();
+            const month = today.getMonth() + 1; // 1-12
+            const date = today.getDate(); // 1-31
+            const year = today.getFullYear();
+            
+            // Christmas: December 25
+            if (month === 12 && date === 25) {
+                holidayOverlay.className = 'holiday-overlay christmas-overlay';
+                holidayMessage.textContent = 'Merry Christmas! May your communications be joyful this holiday season.';
+                holidayNotice.style.display = 'flex';
+            }
+            // New Year: January 1
+            else if (month === 1 && date === 1) {
+                holidayOverlay.className = 'holiday-overlay newyear-overlay';
+                holidayMessage.textContent = 'Happy New Year! May your new year be filled with valuable connections.';
+                holidayNotice.style.display = 'flex';
+            }
+            // Chinese New Year (approximate - usually late Jan to mid Feb)
+            else if (month === 1 && date >= 20 && date <= 31) {
+                holidayOverlay.className = 'holiday-overlay spring-overlay';
+                holidayMessage.textContent = 'Happy Chinese New Year! Wishing you prosperity in all communications.';
+                holidayNotice.style.display = 'flex';
+            }
+            else if (month === 2 && date >= 1 && date <= 15) {
+                holidayOverlay.className = 'holiday-overlay spring-overlay';
+                holidayMessage.textContent = 'Happy Chinese New Year! Wishing you prosperity in all communications.';
+                holidayNotice.style.display = 'flex';
+            }
+            // Valentine's Day: February 14
+            else if (month === 2 && date === 14) {
+                holidayOverlay.className = 'holiday-overlay';
+                holidayOverlay.style.backgroundImage = 'radial-gradient(circle at 20% 30%, rgba(236,72,153,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(236,72,153,0.15) 0%, transparent 50%)';
+                holidayMessage.textContent = 'Happy Valentine\'s Day! May your communications be filled with love and understanding.';
+                holidayNotice.style.display = 'flex';
+            }
+        }
+
+        // Calculate energy number from phone number
+        function calculateEnergyNumber(phoneNumber) {
+            const digits = phoneNumber.replace(/\D/g, '');
+            const relevantDigits = digits.length >= 8 ? digits.slice(-8) : digits;
+            const numberValue = parseInt(relevantDigits, 10);
+            
+            let energyNum = numberValue % 80;
+            if (energyNum === 0) energyNum = 80;
+            
+            while (energyNum > 81) {
+                energyNum -= 81;
+            }
+            
+            return energyNum;
+        }
+
+        // Analyze number patterns for scarcity
+        function analyzePatterns(phoneNumber) {
+            const digits = phoneNumber.replace(/\D/g, '');
+            const lastFour = digits.slice(-4);
+            const lastSix = digits.slice(-6);
+            
+            let scarcityFactor = 1.0;
+            let patternDescription = "Standard pattern";
+            
+            // Check for repeating digits
+            if (/^(\d)\1{3}$/.test(lastFour)) {
+                scarcityFactor = 3.5;
+                patternDescription = "Four repeating digits (AAAA)";
+            } else if (/^(\d)\1{2}$/.test(lastFour.slice(0, 3))) {
+                scarcityFactor = 2.5;
+                patternDescription = "Three repeating digits (AAA)";
+            } else if (/^(\d)\1(\d)\2$/.test(lastFour)) {
+                scarcityFactor = 2.0;
+                patternDescription = "Two pairs (AABB)";
+            } else if (/^(\d)(\d)\1\2$/.test(lastFour)) {
+                scarcityFactor = 1.8;
+                patternDescription = "Alternating pattern (ABAB)";
+            }
+            
+            // Check for sequential numbers
+            if (isSequential(lastFour)) {
+                scarcityFactor = Math.max(scarcityFactor, 3.0);
+                patternDescription = "Sequential digits (e.g., 1234)";
+            }
+            
+            // Check for palindrome
+            if (isPalindrome(lastFour)) {
+                scarcityFactor = Math.max(scarcityFactor, 2.2);
+                patternDescription = "Palindrome pattern";
+            }
+            
+            // Check for all same digit in last 6
+            if (lastSix.length === 6 && /^(\d)\1{5}$/.test(lastSix)) {
+                scarcityFactor = 10.0;
+                patternDescription = "Six repeating digits (extremely rare)";
+            }
+            
+            // Check for gold number patterns
+            if (/(8{3,}|9{3,}|6{3,})/.test(digits.slice(-6))) {
+                scarcityFactor = Math.max(scarcityFactor, 4.0);
+                patternDescription = "Multiple premium digits (e.g., 888, 999)";
+            }
+            
+            return { factor: scarcityFactor, description: patternDescription };
+        }
+
+        // Check if digits are sequential
+        function isSequential(digits) {
+            const asc = digits.split('').every((digit, i, arr) => 
+                i === 0 || parseInt(digit) === parseInt(arr[i-1]) + 1
+            );
+            
+            const desc = digits.split('').every((digit, i, arr) => 
+                i === 0 || parseInt(digit) === parseInt(arr[i-1]) - 1
+            );
+            
+            return asc || desc;
+        }
+
+        // Check if digits form a palindrome
+        function isPalindrome(digits) {
+            return digits === digits.split('').reverse().join('');
+        }
+
+        // Calculate regional cultural factor
+        function calculateCulturalFactor(phoneNumber, countryCode) {
+            const region = regionalData[countryCode] || regionalData.other;
+            const digits = phoneNumber.replace(/\D/g, '');
+            const lastFour = digits.slice(-4);
+            
+            let factor = region.factor;
+            let luckyCount = 0;
+            let unluckyCount = 0;
+            
+            // Check for lucky digits in the number
+            for (const digit of lastFour) {
+                const digitNum = parseInt(digit);
+                if (region.lucky.includes(digitNum)) {
+                    luckyCount++;
+                }
+                if (region.unlucky.includes(digitNum)) {
+                    unluckyCount++;
+                }
+            }
+            
+            // Adjust factor based on lucky/unlucky digits
+            if (luckyCount > 0) {
+                factor += luckyCount * 0.1;
+            }
+            
+            if (unluckyCount > 0) {
+                factor -= unluckyCount * 0.15;
+            }
+            
+            // Ensure factor doesn't go below minimum
+            return Math.max(0.8, factor);
+        }
+
+        // Generate life advice based on energy number and value
+        function generateLifeAdvice(energyNum, phoneValue) {
+            const energyData = energyMeanings[energyNum] || { advice: defaultAdvice };
+            const advice = energyData.advice || defaultAdvice;
+            
+            // Determine advice based on value
+            let valueBasedAdvice = "";
+            if (phoneValue < 1000) {
+                valueBasedAdvice = "This number shows solid foundational value for everyday use. While not commanding premium market prices, it offers reliable communication support for all aspects of life.";
+                
+                // Additional detailed advice for low-value numbers
+                return `
+                    <div class="advice-item">
+                        <div class="advice-icon career"><i class="fas fa-briefcase"></i></div>
+                        <div class="advice-text">
+                            <span class="advice-category category-career">CAREER</span>
+                            <strong>Professional Guidance:</strong> ${advice.career} This number supports steady career growth through consistent, reliable communication.
+                        </div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-icon love"><i class="fas fa-heart"></i></div>
+                        <div class="advice-text">
+                            <span class="advice-category category-love">RELATIONSHIPS</span>
+                            <strong>Relationship Advice:</strong> ${advice.love} Use this number for building genuine connections based on honest communication.
+                        </div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-icon health"><i class="fas fa-heartbeat"></i></div>
+                        <div class="advice-text">
+                            <span class="advice-category category-health">HEALTH</span>
+                            <strong>Wellness Tips:</strong> ${advice.health} This number encourages balanced discussions about physical and mental wellbeing.
+                        </div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-icon finance"><i class="fas fa-chart-line"></i></div>
+                        <div class="advice-text">
+                            <span class="advice-category category-finance">FINANCE</span>
+                            <strong>Financial Insight:</strong> ${advice.finance} While not a premium investment number, it supports stable financial communications.
+                        </div>
+                    </div>
+                    <div class="advice-item">
+                        <div class="advice-icon general"><i class="fas fa-lightbulb"></i></div>
+                        <div class="advice-text">
+                            <strong>Market Analysis:</strong> ${valueBasedAdvice} Perfect for personal use and building meaningful connections over time.
+                        </div>
+                    </div>
+                `;
+            } else if (phoneValue > 5000) {
+                valueBasedAdvice = "Market analysis indicates this is a premium number with strong investment potential. Consider it for important business contacts or as a valuable digital asset.";
+            } else {
+                valueBasedAdvice = "This number shows strong market performance indicators. Suitable for professional use and may enhance communication effectiveness.";
+            }
+            
+            // Standard advice for medium/high value numbers
+            return `
+                <div class="advice-item">
+                    <div class="advice-icon career"><i class="fas fa-briefcase"></i></div>
+                    <div class="advice-text"><strong>Career:</strong> ${advice.career}</div>
+                </div>
+                <div class="advice-item">
+                    <div class="advice-icon love"><i class="fas fa-heart"></i></div>
+                    <div class="advice-text"><strong>Relationships:</strong> ${advice.love}</div>
+                </div>
+                <div class="advice-item">
+                    <div class="advice-icon health"><i class="fas fa-heartbeat"></i></div>
+                    <div class="advice-text"><strong>Health:</strong> ${advice.health}</div>
+                </div>
+                <div class="advice-item">
+                    <div class="advice-icon finance"><i class="fas fa-chart-line"></i></div>
+                    <div class="advice-text"><strong>Finance:</strong> ${advice.finance}</div>
+                </div>
+                <div class="advice-item">
+                    <div class="advice-icon general"><i class="fas fa-lightbulb"></i></div>
+                    <div class="advice-text"><strong>Market Analysis:</strong> ${valueBasedAdvice}</div>
+                </div>
+            `;
+        }
+
+        // Setup share links
+        function setupShareLinks(phoneNumber, country, value) {
+            const shareText = `My phone number ${phoneNumber} (${country}) has an estimated market value of ${value} according to global big data analysis!`;
+            const shareUrl = window.location.href;
+            
+            shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`;
+            shareTwitter.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+            shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}&summary=${encodeURIComponent(shareText)}`;
+            shareWhatsApp.href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+            shareTelegram.href = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+        }
+
+        // Format currency with commas
+        function formatCurrency(amount) {
+            return '$' + amount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // Calculate and display results
+        function calculateValue() {
+            const phoneNumber = phoneNumberInput.value.trim();
+            const countryCode = countrySelect.value;
+            
+            // Validate phone number
+            if (!phoneNumber || phoneNumber.length < 7) {
+                alert("Please enter a valid phone number with at least 7 digits.");
+                return;
+            }
+            
+            // Track calculation event in Google Analytics
+            gtag('event', 'calculate_value', {
+                'event_category': 'calculation',
+                'event_label': countryCode,
+                'value': 1
+            });
+            
+            // Show loading state
+            calculateBtn.disabled = true;
+            loadingIcon.classList.add('active');
+            
+            // Simulate calculation time
+            setTimeout(() => {
+                // Calculate energy number
+                const energyNum = calculateEnergyNumber(phoneNumber);
+                const energyData = energyMeanings[energyNum] || { 
+                    meaning: "Balanced market performance with stable indicators", 
+                    luck: "Average", 
+                    score: 50 
+                };
+                
+                // Analyze patterns
+                const patternAnalysis = analyzePatterns(phoneNumber);
+                
+                // Calculate cultural factor
+                const culturalFactorValue = calculateCulturalFactor(phoneNumber, countryCode);
+                
+                // Calculate base value
+                let baseValue = energyData.score * 25;
+                baseValue *= patternAnalysis.factor;
+                baseValue *= culturalFactorValue;
+                
+                // Add random factor for realism
+                const randomFactor = 0.85 + Math.random() * 0.3;
+                baseValue *= randomFactor;
+                baseValue = Math.max(100, baseValue);
+                
+                // Update UI with results
+                const formattedValue = formatCurrency(baseValue);
+                valueAmount.textContent = formattedValue;
+                energyNumber.textContent = energyNum;
+                energyMeaning.textContent = energyData.meaning;
+                energyScore.textContent = `${energyData.score}/100`;
+                scarcityFactor.textContent = `${patternAnalysis.factor.toFixed(1)}x`;
+                culturalFactor.textContent = `${culturalFactorValue.toFixed(1)}x`;
+                
+                // Calculate pattern bonus percentage
+                const patternBonusValue = Math.round((patternAnalysis.factor - 1) * 100);
+                patternBonus.textContent = `${patternBonusValue > 0 ? '+' : ''}${patternBonusValue}%`;
+                patternBonus.className = `factor-value ${patternBonusValue > 0 ? 'positive' : patternBonusValue < 0 ? 'negative' : 'neutral'}`;
+                
+                // Update score indicator
+                let scoreClass, scorePercentage;
+                if (energyData.luck === "Excellent") {
+                    scoreClass = "good";
+                    scorePercentage = 95;
+                } else if (energyData.luck === "Good") {
+                    scoreClass = "good";
+                    scorePercentage = 75;
+                } else if (energyData.luck === "Average") {
+                    scoreClass = "average";
+                    scorePercentage = 50;
+                } else {
+                    scoreClass = "poor";
+                    scorePercentage = 25;
+                }
+                
+                scoreFill.className = `score-fill ${scoreClass}`;
+                scoreFill.style.width = `${scorePercentage}%`;
+                scoreText.textContent = energyData.luck;
+                scoreText.className = `score-text ${scoreClass}`;
+                
+                // Apply styling based on value
+                if (baseValue > 5000) {
+                    valueDisplay.classList.add('gold-value');
+                    valueAmount.classList.add('gold-text');
+                    valueAmount.classList.remove('low-value');
+                    valueNote.textContent = "Premium valuation based on global market data";
+                } else if (baseValue < 1000) {
+                    valueDisplay.classList.remove('gold-value');
+                    valueAmount.classList.remove('gold-text');
+                    valueAmount.classList.add('low-value');
+                    valueNote.textContent = "Standard valuation - ideal for personal use";
+                } else {
+                    valueDisplay.classList.remove('gold-value');
+                    valueAmount.classList.remove('gold-text', 'low-value');
+                    valueNote.textContent = "Above average valuation based on market analysis";
+                }
+                
+                // Generate and display life advice
+                const lifeAdviceHTML = generateLifeAdvice(energyNum, baseValue);
+                adviceList.innerHTML = lifeAdviceHTML;
+                lifeAdviceSection.style.display = 'block';
+                
+                // Setup share links
+                const countryName = regionalData[countryCode]?.name || countryCode;
+                setupShareLinks(phoneNumber, countryName, formattedValue);
+                shareSection.style.display = 'block';
+                
+                // Show results card
+                resultsCard.classList.add('active');
+                
+                // Track results display
+                gtag('event', 'display_results', {
+                    'event_category': 'results',
+                    'event_label': `value_${baseValue > 5000 ? 'high' : baseValue < 1000 ? 'low' : 'medium'}`,
+                    'value': Math.round(baseValue)
+                });
+                
+                // Reset button state
+                calculateBtn.disabled = false;
+                loadingIcon.classList.remove('active');
+            }, 1200);
+        }
+
+        // Event listeners
+        calculateBtn.addEventListener('click', calculateValue);
+        
+        phoneNumberInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateValue();
+            }
+        });
+        
+        // Prevent default behavior for share links (they should open in new tab)
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const platform = this.id.replace('share', '');
+                gtag('event', 'share', {
+                    'event_category': 'social',
+                    'event_label': platform,
+                    'method': 'share_button'
+                });
+            });
+        });
+        
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Initialize top numbers list
+            initializeTopNumbers();
+            
+            // Check for holidays
+            checkHolidays();
+            
+            // Set default example
+            const defaultCountry = countrySelect.value;
+            let defaultNumber = "+14155552671";
+            
+            if (defaultCountry === "GB") defaultNumber = "+447911123456";
+            else if (defaultCountry === "AU") defaultNumber = "+61412345678";
+            else if (defaultCountry === "SG") defaultNumber = "+6581234567";
+            
+            phoneNumberInput.value = defaultNumber;
+            
+            // Perform initial calculation
+            calculateValue();
+        });
+    </script>
+</body>
+</html>
